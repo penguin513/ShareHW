@@ -23,8 +23,8 @@ ShareHW(Share House Works)は日々の家事をリスト化し共有すること
 - 自分の家で使っている商品の情報を登録できる
 - 同じ部屋のユーザ間でチャットを使って意思疎通をとれる
 
-##開発環境
-Windows/XAMPP/MySQL/Laravel
+## 開発環境
+Windows / XAMPP / MySQL / Laravel
 
 ## 導入説明
 １．ShareHWをダウンロードし、XAMPPまたはMAMPのhtdocsにフォルダごと入れてください。
