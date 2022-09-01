@@ -33,11 +33,7 @@ Windows / XAMPP / MySQL / Laravel
 
 ３．Mailtrapにアカウント登録後、アカウント情報、自身のデータベース情報を.env.exampleを参考に.envファイルを作成してください。
 
-４．nodeとnpmをインストール後、コマンド上で「npm run dev」を実行してください。
-
-※参考　https://qiita.com/mk185/items/7ad004bf202f400daea1
-
-５．お使いのXAMPPまたはMAMPの「httpd.conf」の
+４．お使いのXAMPPまたはMAMPの「httpd.conf」の
 ```
 DocumentRoot "C:/xampp/htdocs"
 <Directory "C:/xampp/htdocs">
@@ -53,6 +49,9 @@ DocumentRoot "C:/xampp/htdocs/ShareHW/public"
 
 に書き換えてください
 
+５．nodeとnpmをインストール後、コマンド上でShareHWのファイルが存在するディレクトリまで移動し、「npm run dev」を実行してください。
+
+※参考　https://qiita.com/mk185/items/7ad004bf202f400daea1
 
 ６．http://localhost （各自環境に合わせて変化）にアクセス後ログイン画面が表示されるので、新規ユーザ登録をするか初期ユーザとして次の2つのアカウントが既に登録してありますので、そちらを適宜お使いください。
 
