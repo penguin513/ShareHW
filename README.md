@@ -1,4 +1,4 @@
-# ShareHW
+# ![Share HW](https://raw.githubusercontent.com/penguin513/ShareHW/master/ShareHW/public/img/ShareHW_logo.png)
 ## 概要
 ShareHW(Share House Works)は日々の家事をリスト化し共有することで、
 
