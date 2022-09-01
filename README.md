@@ -49,7 +49,14 @@ DocumentRoot "C:/xampp/htdocs/ShareHW/public"
 
 に書き換えてください
 
-５．nodeとnpmをインストール後、コマンド上でShareHWのファイルが存在するディレクトリまで移動し、「npm run dev」を実行してください。
+５．nodeとnpmをインストール後、コマンド上でShareHWのファイルが存在するディレクトリまで移動し、
+
+```
+php artisan storage:link
+npm run dev
+```
+
+を実行してください。
 
 ※参考　https://qiita.com/mk185/items/7ad004bf202f400daea1
 
