@@ -1,4 +1,4 @@
-# ShareHW
+# ![Share HW](https://raw.githubusercontent.com/penguin513/ShareHW/master/ShareHW/public/img/ShareHW_logo.png)
 ## 概要
 ShareHW(Share House Works)は日々の家事をリスト化し共有することで、
 
@@ -7,7 +7,7 @@ ShareHW(Share House Works)は日々の家事をリスト化し共有すること
 ## 開発背景
 昨今共働きの世帯が増え、
 
-**『家事というものを従来の誰か特定の一人が家事をする』** という考え方から **『みんなで協力して行う』** という風に変化しつつあります。
+従来のような **『誰か特定の一人が家事をする』** という考え方から **『みんなで協力して行う』** という風に変化しつつあります。
 
 また、家事というものはなかなか目に見えにくくその大変さが顕在化しにくいという面があり、それがもとで家庭内でのトラブルを生むケースもあります。
 
@@ -23,4 +23,56 @@ ShareHW(Share House Works)は日々の家事をリスト化し共有すること
 - 自分の家で使っている商品の情報を登録できる
 - 同じ部屋のユーザ間でチャットを使って意思疎通をとれる
 
-## 使用説明
+## 開発環境
+Windows / XAMPP / MySQL / Laravel
+
+## 導入説明
+１．ShareHWをダウンロードし、XAMPPまたはMAMPのhtdocsにフォルダごと入れてください。
+
+２．ご自身のDBに「sharehw」というデータベースを作成し、「sharehw.sql.zip」をダウンロード後インポートしてください。
+
+３．Mailtrapにアカウント登録後、アカウント情報、自身のデータベース情報を.env.exampleを参考に.envファイルを作成してください。
+
+４．お使いのXAMPPまたはMAMPの「httpd.conf」の
+```
+DocumentRoot "C:/xampp/htdocs"
+<Directory "C:/xampp/htdocs">
+```
+
+を
+
+
+```
+DocumentRoot "C:/xampp/htdocs/ShareHW/public"
+<Directory "C:/xampp/htdocs/ShareHW/public">
+```
+
+に書き換えてください
+
+５．nodeとnpmをインストール後、コマンド上でShareHWのファイルが存在するディレクトリまで移動し、
+
+```
+php artisan storage:link
+npm run dev
+```
+
+を実行してください。
+
+※参考　https://qiita.com/mk185/items/7ad004bf202f400daea1
+
+６．http://localhost （各自環境に合わせて変化）にアクセス後ログイン画面が表示されるので、新規ユーザ登録をするか初期ユーザとして次の2つのアカウントが既に登録してありますので、そちらを適宜お使いください。
+
+###### ①管理者テストユーザ
+
+メールアドレス：admin@sharehw.com
+
+パスワード　　：passwordadmin
+
+###### ②一般テストユーザ
+
+メールアドレス：general@sharehw.com
+
+パスワード　　：passwordgeneral
+
+## データベース
+sharehw.sql.zip（ご自由にダウンロードしてお使いください）
