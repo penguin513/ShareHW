@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.lity .lity-content img {
+    height: 80vh;
+}
