@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .lity .lity-content img {
-    height: 80vh;
+    max-height: 80vh !important;
 }
