@@ -65,7 +65,7 @@ Route::middleware(['auth', 'verified'])->prefix('items')->group(function () {
 
 
 Route::middleware(['auth', 'verified'])->prefix('chat')->group(function () {
-    Route::get('/', [ChatsController::class, 'chat'])->name('chat');
+    Route::get('/', [ChatsController::class, 'index'])->name('chat');
     Route::get('/edit/{id}', [ChatsController::class, 'chat_edit'])->name('chat.edit');
 
     Route::post('/add', [ChatsController::class, 'add'])->name('add');
@@ -74,6 +74,8 @@ Route::middleware(['auth', 'verified'])->prefix('chat')->group(function () {
     Route::delete('/remove/{id}', [ChatsController::class, 'chat_remove'])->name('chat.remove');
 
 });
+
+Route::get('/result/ajax', [ChatsController::class, 'getData']);
 
 
 Route::middleware(['auth', 'verified'])->prefix('mypage')->group(function () {

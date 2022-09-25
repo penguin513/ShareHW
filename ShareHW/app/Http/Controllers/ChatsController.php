@@ -16,42 +16,68 @@ class ChatsController extends Controller
 {
 
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * トップページ（チャットページ）
      *
      * @return view
      */
-    public function chat() {
+    public function index()
+    {
         $user = Auth::user();
         $room_id = $user->room_id;
+        $user_id = $user->id;
         $comments = Comment::where('room_id', '=', $room_id)->get();
         return view('chat.chat',
             [
                 'comments' => $comments,
                 'user' => $user,
+                'user_id' => $user_id,
             ]
         );
     }
 
 
     /**
-     * メッセージ送信処理
+     * コメント送信処理
+     * @param $request
      *
      * @return redirect
      */
-    public function add(ChatRequest $request) {
+    public function add(ChatRequest $request)
+    {
         $user = Auth::user();
         $comment = $request->input('comment');
-
-        Comment::create(
-            [
-                'user_id' => $user->id,
-                'room_id' => $user->room_id,
-                'name' => $user->name,
-                'comment' => $comment
-            ]
-        );
-
+        Comment::create([
+            'user_id' => $user->id,
+            'room_id' => $user->room_id,
+            'name' => $user->name,
+            'comment' => $comment
+        ]);
         return redirect()->route('chat');
+    }
+
+
+    /**
+     * コメント取得処理
+     *
+     * @return response
+     */
+    public function getData()
+    {
+        $user = Auth::user();
+        $room_id = $user->room_id;
+        $comments = Comment::where('room_id', $room_id)->orderBy('created_at', 'asc')->get();
+        $json = ["comments" => $comments];
+        return response()->json($json);
     }
 
 
@@ -65,6 +91,7 @@ class ChatsController extends Controller
 
         return view('chat.chat_edit', ['comment' => $comment]);
     }
+
 
     /**
      * コメント変更の実行
@@ -100,7 +127,7 @@ class ChatsController extends Controller
 
 
     /**
-     * 家事削除の実行
+     * コメント削除の実行
      * @param $id
      * @return redirect
      */

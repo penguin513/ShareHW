@@ -420,7 +420,5 @@
         window.addEventListener("click", checkOffset, false);
     });
 
-
-console.log(point_users);
 </script>
 @endsection
