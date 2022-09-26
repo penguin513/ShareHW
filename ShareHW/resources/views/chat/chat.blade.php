@@ -576,7 +576,6 @@
                     // スクロールを一番下に
                     let event = document.getElementById('submit');
                     let target = document.getElementById('comment-data');
-                    let edit = document.querySelector('.edit');
 
                     event.addEventListener('click', function () {
                         target.scrollIntoView(false);
