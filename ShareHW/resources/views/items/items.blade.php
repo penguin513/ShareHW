@@ -99,7 +99,9 @@
                                         <thead>
                                             <tr>
                                                 <th class="px-3 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 whitespace-nowrap text-center">ID</th>
+                                                @if ($user_role === 1)
                                                 <th class="px-3 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 whitespace-nowrap text-center">部屋ID</th>
+                                                @endif
                                                 <th class="px-3 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 whitespace-nowrap text-center">アイテム名</th>
                                                 <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 whitespace-nowrap text-center">写真</th>
                                                 <th class="px-1 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 whitespace-nowrap text-center">メッセージ</th>
@@ -113,7 +115,9 @@
                                             @foreach ($items as $item)
                                                 <tr  class="border-t hover:bg-orange-50">
                                                     <td class="text-sm px-3 py-3 whitespace-nowrap text-center">{{ $item->id }}</td>
+                                                    @if ($user_role === 1)
                                                     <td class="text-sm px-3 py-3 whitespace-nowrap text-center">{{ $item->room_id }}</td>
+                                                    @endif
                                                     <td class="text-sm px-3 py-3 whitespace-nowrap text-center">{{ $item->name }}</td>
                                                     <td class="max-w-xs max-h-xs px-1 py-3 text-gray-900 text-center">
                                                         @if (isset($item->photo))
